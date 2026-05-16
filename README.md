@@ -6,6 +6,24 @@
 
 </div>
 
+--------------
+
+<div align="center" > 
+  
+### 📊 Performance Comparison (Before vs. After Improvements)
+
+| Metric | Baseline Model | Improved Model |
+| :--- | :---: | :---: |
+| **Training Accuracy** | 0.5507 (55.07%) | 0.4100 (41.00%) |
+| **Validation Accuracy** | 0.4004 (40.04%) | 0.3800 (38.00%) |
+| **Precision (Macro Avg)**| 0.0300 (3.00%) | 0.3957 (39.57%) |
+| **Recall (Macro Avg)** | 0.0500 (5.00%) | 0.4051 (40.51%) |
+| **F1-score (Macro Avg)** | 0.0200 (2.00%) | 0.3823 (38.23%) |
+| **AUC Score** | 0.5600 (56.00%) | 0.8594 (85.94%) |
+  
+</div>
+
+
 ## A. Model Evaluation Analysis
 
 1. What were the weakest-performing classes based on the confusion matrix? 
@@ -20,7 +38,7 @@
 4. How does AUC score reflect model performance compared to accuracy?
      While the accuracy was a poor 6%, the AUC scores (averaging 0.85) showed the model had a decent underlying ability to rank the correct class higer than the others, even if it wasn't the top choice.
    
-B. Model Improvement
+## B. Model Improvement
 
 5. How did data augmentation affect validation accuracy?
     Data augmentation helped stabilize the learning process, preventing the model from hitting a fake 100% training accuracy and helping validation accuracy rise steadily.
@@ -34,7 +52,7 @@ B. Model Improvement
 8. How did Early Stopping prevent overfitting?
     Early stopping monitored the validation loss and halted training before the model could start memorizing the specefic details of the training set, thus preserving the generalization.
 
-C. Performance Comparison
+## C. Performance Comparison
 9. What improvements were observed after modifying the model?
     After training, the generalization gap decreased from a massive discrepancy to a synchronized trend where training and validation accuracy both moved toward the 40% mark.
 
@@ -44,7 +62,7 @@ C. Performance Comparison
 11. Did the gap between training and validation accuracy decrease? Explain.
     Yes, the gap decreased because the improved model focused on learning robust botanical features rather than memorizing pixels, bringing the training and validation lines closer together.
     
-D. Explainability (Grad-CAM Integration)
+## D. Explainability (Grad-CAM Integration)
 
 12. How did Grad-CAM help in understanding model predictions?
     Grad-CAM helped provide a visual heatmap that revealed the baseline model was focusing on scattered bacground noise and edges rather than the actual plant features.
@@ -53,5 +71,5 @@ D. Explainability (Grad-CAM Integration)
     The improved model showed more concentrated activations; evidence from the baseline Grad-CAM showed scattered hotspots, whereas the improved architecture's deeper layers filtered out background textures.
 
 14. Why is explainability important in real-world AI applications?
-    Expalinability is vital in real-world, such as agriculture, to ensure s=hte system is identifying a plant based on its leaves or fruits rather than irrelevant factors like the camera angle or the type of soil.
+    Expalinability is vital in real-world, such as agriculture, to ensure the system is identifying a plant based on its leaves or fruits rather than irrelevant factors like the camera angle or the type of soil.
 
